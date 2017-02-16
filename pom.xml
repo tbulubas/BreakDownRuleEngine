@@ -13,6 +13,7 @@
     <modules>
         <module>breakdown-modules</module>
         <module>breakdown-tests</module>
+        <module>breakdown-apps</module>
     </modules>
 
     <scm>
