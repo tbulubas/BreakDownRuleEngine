@@ -6,11 +6,55 @@
 
     <groupId>com.tb_optimus.breakdown-ruleengine</groupId>
     <artifactId>breakdown-ruleengine</artifactId>
-    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>BDRE Distribution</name>
+
     <modules>
-        <module>breakdownmodel</module>
-        <module>optaplannersolver</module>
+        <module>breakdown-modules</module>
+        <module>breakdown-tests</module>
     </modules>
+
+    <scm>
+        <!--<connection>scm:git:http://rndwww.nce.amadeus.net/git/scm/aptsepl/sepl.git</connection>-->
+        <!--<developerConnection>scm:git:http://rndwww.nce.amadeus.net/git/scm/aptsepl/sepl.git</developerConnection>-->
+        <!--<tag>HEAD</tag>-->
+    </scm>
+
+    <properties>
+        <!-- this property comes from Jenkins -->
+        <!--<build.number>${BUILD_NUMBER}</build.number>-->
+        <version.junit>4.11</version.junit>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${version.junit}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <!--<pluginManagement>-->
+            <!--<plugins>-->
+            <!--</plugins>-->
+        <!--</pluginManagement>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    </build>
 
 </project>
