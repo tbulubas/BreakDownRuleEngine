@@ -14,7 +14,8 @@
     <name>BDRE Modules</name>
 
     <modules>
-        <module>breakdown-model</module>
+        <module>breakdown-model-api</module>
+        <module>breakdown-model-impl</module>
         <module>optaplanner-solver</module>
     </modules>
 </project>

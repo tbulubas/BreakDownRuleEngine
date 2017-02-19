@@ -1,16 +1,15 @@
 package com.tb_optimus.breakdown;
 
-public class Colour {
+public class ColourImpl implements Colour {
 
     private Long id;
     private String name;
 
-    public Colour(Long id, String name) {
+    public ColourImpl(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    @Override
     public String toString() {
         return "Colour{" +
                 "id=" + id +
@@ -18,18 +17,16 @@ public class Colour {
                 '}';
     }
 
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Colour)) return false;
+        if (!(o instanceof ColourImpl)) return false;
 
-        Colour colour = (Colour) o;
+        ColourImpl colour = (ColourImpl) o;
 
         if (!id.equals(colour.id)) return false;
         return name.equals(colour.name);
     }
 
-    @Override
     public int hashCode() {
         int result = id.hashCode();
         result = 31 * result + name.hashCode();

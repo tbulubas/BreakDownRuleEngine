@@ -3,17 +3,16 @@ package com.tb_optimus.breakdown;
 import java.util.Map;
 import java.util.Vector;
 
-public class Order {
+public class OrderImpl implements Order {
 
     private Vector<Colour> colours;
     private Map<Colour,Vector<Long>> order;
 
-    public Order(Vector<Colour> colours, Map<Colour, Vector<Long>> order) {
+    public OrderImpl(Vector<Colour> colours, Map<Colour, Vector<Long>> order) {
         this.colours = colours;
         this.order = order;
     }
 
-    @Override
     public String toString() {
         return "Order{" +
                 "colours=" + colours +
@@ -24,15 +23,14 @@ public class Order {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Order)) return false;
+        if (!(o instanceof OrderImpl)) return false;
 
-        Order order1 = (Order) o;
+        OrderImpl order1 = (OrderImpl) o;
 
         if (!colours.equals(order1.colours)) return false;
         return order.equals(order1.order);
     }
 
-    @Override
     public int hashCode() {
         int result = colours.hashCode();
         result = 31 * result + order.hashCode();

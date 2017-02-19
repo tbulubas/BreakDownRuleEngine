@@ -11,9 +11,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tb_optimus.breakdown-ruleengine</groupId>
-    <artifactId>breakdown-model</artifactId>
+    <artifactId>breakdown-model-api</artifactId>
     <packaging>pom</packaging>
-    <name>BDRE Model</name>
+    <name>BDRE Model API</name>
 
 </project>
