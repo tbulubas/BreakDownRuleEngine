@@ -18,12 +18,18 @@ public class ColourImpl implements Colour {
     }
 
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ColourImpl)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof ColourImpl)) {
+            return false;
+        }
 
         ColourImpl colour = (ColourImpl) o;
 
-        if (!id.equals(colour.id)) return false;
+        if (!id.equals(colour.id)) {
+            return false;
+        }
         return name.equals(colour.name);
     }
 
