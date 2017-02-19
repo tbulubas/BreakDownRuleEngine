@@ -12,6 +12,7 @@
     <artifactId>breakdown-service-api</artifactId>
     <packaging>pom</packaging>
     <name>BDRE Service API</name>
+
     <dependencies>
         <dependency>
             <groupId>com.tb_optimus.breakdown-ruleengine</groupId>
