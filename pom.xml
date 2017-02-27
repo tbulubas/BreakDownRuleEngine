@@ -21,8 +21,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
+        <version.java>1.8</version.java>
         <version.junit>4.11</version.junit>
+        <version.fest-assert>1.4</version.fest-assert>
+        <optaplanner.version>6.5.0.Final</optaplanner.version>
     </properties>
 
     <modules>
@@ -38,6 +40,27 @@
                 <artifactId>junit</artifactId>
                 <version>${version.junit}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.optaplanner</groupId>
+                <artifactId>optaplanner-core</artifactId>
+                <version>${optaplanner.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.optaplanner</groupId>
+                <artifactId>optaplanner-bom</artifactId>
+                <type>pom</type>
+                <version>${optaplanner.version}</version>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.easytesting</groupId>
+                <artifactId>fest-assert</artifactId>
+                <version>${version.fest-assert}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -54,6 +77,16 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.optaplanner</groupId>
+            <artifactId>optaplanner-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-assert</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -1,14 +1,18 @@
 package com.tb_optimus.breakdown;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 import java.util.Vector;
 
-public class OrderImpl implements Order {
+@Component
+public class ColourSizeOrderImpl implements ColourSizeOrder {
 
     private Vector<Colour> colours;
-    private Map<Colour,Vector<Long>> order;
 
-    public OrderImpl(Vector<Colour> colours, Map<Colour, Vector<Long>> order) {
+    private Map<Colour,SizeOrder> order;
+
+    public ColourSizeOrderImpl(Vector<Colour> colours, Map<Colour, SizeOrder> order) {
         this.colours = colours;
         this.order = order;
     }
@@ -23,9 +27,9 @@ public class OrderImpl implements Order {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof OrderImpl)) return false;
+        if (!(o instanceof ColourSizeOrderImpl)) return false;
 
-        OrderImpl order1 = (OrderImpl) o;
+        ColourSizeOrderImpl order1 = (ColourSizeOrderImpl) o;
 
         if (!colours.equals(order1.colours)) return false;
         return order.equals(order1.order);
@@ -45,11 +49,11 @@ public class OrderImpl implements Order {
         this.colours = colours;
     }
 
-    public Map<Colour, Vector<Long>> getOrder() {
+    public Map<Colour, SizeOrder> getOrder() {
         return order;
     }
 
-    public void setOrder(Map<Colour, Vector<Long>> order) {
+    public void setOrder(Map<Colour, SizeOrder> order) {
         this.order = order;
     }
 }

@@ -1,0 +1,20 @@
+package com.tb_optimus.breakdown_ruleengine.solver;
+    dialect "java"
+
+import org.optaplanner.core.api.score.buildin.simplelong.SimpleLongScoreHolder;
+
+import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution;
+
+global SimpleLongScoreHolder scoreHolder;
+
+// Setup
+rule "period"
+    salience 3
+    when
+        BreakdownSolution()
+    then
+end
+
+// ############################################################################
+// Soft constraints
+// ############################################################################
