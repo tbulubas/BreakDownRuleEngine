@@ -1,7 +1,10 @@
 package com.tb_optimus.breakdown;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
+@Component
 public class SizeOrderImpl implements SizeOrder {
 
     private Map<Size, Integer> sizeOrder;

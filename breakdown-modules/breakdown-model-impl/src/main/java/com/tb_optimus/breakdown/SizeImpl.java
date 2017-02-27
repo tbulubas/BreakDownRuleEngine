@@ -1,5 +1,8 @@
 package com.tb_optimus.breakdown;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SizeImpl implements Size {
 
     private Long id;
