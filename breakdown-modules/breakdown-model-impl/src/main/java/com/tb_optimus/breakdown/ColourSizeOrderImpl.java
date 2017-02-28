@@ -2,17 +2,17 @@ package com.tb_optimus.breakdown;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 @Component
 public class ColourSizeOrderImpl implements ColourSizeOrder {
 
-    private Vector<Colour> colours;
+    private List<Colour> colours;
 
     private Map<Colour,SizeOrder> order;
 
-    public ColourSizeOrderImpl(Vector<Colour> colours, Map<Colour, SizeOrder> order) {
+    public ColourSizeOrderImpl(List<Colour> colours, Map<Colour, SizeOrder> order) {
         this.colours = colours;
         this.order = order;
     }
@@ -41,11 +41,11 @@ public class ColourSizeOrderImpl implements ColourSizeOrder {
         return result;
     }
 
-    public Vector<Colour> getColours() {
+    public List<Colour> getColours() {
         return colours;
     }
 
-    public void setColours(Vector<Colour> colours) {
+    public void setColours(List<Colour> colours) {
         this.colours = colours;
     }
 

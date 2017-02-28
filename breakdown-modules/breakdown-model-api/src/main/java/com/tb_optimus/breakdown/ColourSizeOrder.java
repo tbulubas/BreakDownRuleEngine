@@ -1,13 +1,13 @@
 package com.tb_optimus.breakdown;
 
+import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 public interface ColourSizeOrder {
 
-    Vector<Colour> getColours();
+    List<Colour> getColours();
 
-    void setColours(Vector<Colour> colours);
+    void setColours(List<Colour> colours);
 
     Map<Colour, SizeOrder> getOrder();
 

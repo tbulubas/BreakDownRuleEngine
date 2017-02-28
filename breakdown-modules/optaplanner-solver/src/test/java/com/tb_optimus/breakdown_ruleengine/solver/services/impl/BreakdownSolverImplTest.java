@@ -1,5 +1,6 @@
 package com.tb_optimus.breakdown_ruleengine.solver.services.impl;
 
+import com.google.common.collect.Lists;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.Breakdown;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution;
 import com.tb_optimus.breakdown_ruleengine.solver.services.api.BreakdownSolver;
@@ -13,7 +14,6 @@ import org.optaplanner.core.api.solver.SolverFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -54,7 +54,7 @@ public class BreakdownSolverImplTest {
         Solver<BreakdownSolution> solver = breakdownSolver.getSolver();
         BreakdownSolution startSolution = new BreakdownSolution();
         List<Breakdown> breakdownList = new ArrayList<Breakdown>();
-        Breakdown breakdown = new Breakdown(new Vector());
+        Breakdown breakdown = new Breakdown(Lists.newArrayList(1,1,1));
         breakdownList.add(breakdown);
         startSolution.setBreakdownList(breakdownList);
         // when

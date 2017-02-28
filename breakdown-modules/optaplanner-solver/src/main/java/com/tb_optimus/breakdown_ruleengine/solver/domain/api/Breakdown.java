@@ -3,7 +3,7 @@ package com.tb_optimus.breakdown_ruleengine.solver.domain.api;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
-import java.util.Vector;
+import java.util.List;
 
 @PlanningEntity
 public class Breakdown {
@@ -11,17 +11,17 @@ public class Breakdown {
     private Long id;
 
     @PlanningVariable(valueRangeProviderRefs = {"breakdown"})
-    private Vector<Integer> breakdown;
+    private List<Integer> breakdown;
 
-    public Breakdown(Vector<Integer> breakdown) {
+    public Breakdown(List<Integer> breakdown) {
         this.breakdown = breakdown;
     }
 
-    public Vector<Integer> getBreakdown() {
+    public List<Integer> getBreakdown() {
         return breakdown;
     }
 
-    public void setBreakdown(Vector<Integer> breakdown) {
+    public void setBreakdown(List<Integer> breakdown) {
         this.breakdown = breakdown;
     }
 
@@ -50,7 +50,7 @@ public class Breakdown {
 
     @Override
     public String toString() {
-        return "BreakdownVectorImpl{" +
+        return "Breakdown{" +
                 "breakdown=" + breakdown +
                 '}';
     }
