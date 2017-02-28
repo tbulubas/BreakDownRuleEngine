@@ -27,6 +27,8 @@
         <version.jaxb-api>2.2.12</version.jaxb-api>
         <version.xstream>1.4.9</version.xstream>
         <version.surefire>2.19.1</version.surefire>
+        <version.logback>1.2.1</version.logback>
+        <slf4j.version>1.7.24</slf4j.version>
         <optaplanner.version>6.5.0.Final</optaplanner.version>
     </properties>
 
@@ -48,13 +50,11 @@
                 <artifactId>junit</artifactId>
                 <version>${version.junit}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.optaplanner</groupId>
                 <artifactId>optaplanner-core</artifactId>
                 <version>${optaplanner.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.optaplanner</groupId>
                 <artifactId>optaplanner-bom</artifactId>
@@ -62,23 +62,36 @@
                 <version>${optaplanner.version}</version>
                 <scope>import</scope>
             </dependency>
-
             <dependency>
                 <groupId>org.easytesting</groupId>
                 <artifactId>fest-assert</artifactId>
                 <version>${version.fest-assert}</version>
             </dependency>
-
             <dependency>
                 <groupId>javax.xml.bind</groupId>
                 <artifactId>jaxb-api</artifactId>
                 <version>${version.jaxb-api}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
                 <version>${version.xstream}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${version.logback}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${version.logback}</version>
             </dependency>
 
         </dependencies>
@@ -120,6 +133,23 @@
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!-- LOGING -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
