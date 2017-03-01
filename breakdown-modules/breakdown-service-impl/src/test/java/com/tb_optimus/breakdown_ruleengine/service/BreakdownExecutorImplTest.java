@@ -6,7 +6,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -22,7 +24,8 @@ public class BreakdownExecutorImplTest {
         Colour blue = new ColourImpl(2L, "blue");
         Colour green = new ColourImpl(3L, "green");
         List<Colour> colours = Lists.newArrayList(red, blue, green);
-        ColourSizeOrder order = new ColourSizeOrderImpl(colours, null);
+        Map<Colour, SizeOrder> orderMap = new HashMap<Colour, SizeOrder>();
+        ColourSizeOrder order = new ColourSizeOrderImpl(orderMap);
         // when
         Boolean executeBreakdown = breakdownExecutor.executeBreakdown(order);
         // then

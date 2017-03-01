@@ -4,16 +4,17 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Component
 public class ColourSizeOrderImpl implements ColourSizeOrder {
 
-    private List<Colour> colours;
+    private Set<Colour> colours;
 
     private Map<Colour,SizeOrder> order;
 
-    public ColourSizeOrderImpl(List<Colour> colours, Map<Colour, SizeOrder> order) {
-        this.colours = colours;
+    public ColourSizeOrderImpl(Map<Colour, SizeOrder> order) {
+        this.colours = order.keySet();
         this.order = order;
     }
 
@@ -41,12 +42,8 @@ public class ColourSizeOrderImpl implements ColourSizeOrder {
         return result;
     }
 
-    public List<Colour> getColours() {
+    public Set<Colour> getColours() {
         return colours;
-    }
-
-    public void setColours(List<Colour> colours) {
-        this.colours = colours;
     }
 
     public Map<Colour, SizeOrder> getOrder() {
