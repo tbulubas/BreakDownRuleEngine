@@ -37,3 +37,6 @@ hs_err_pid*
 .idea/
 breakdownmodel/src/
 optaplannersolver/src/
+
+# maven
+*.iml
