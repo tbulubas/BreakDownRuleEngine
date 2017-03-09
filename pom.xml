@@ -22,7 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <version.java>1.8</version.java>
-        <version.junit>4.11</version.junit>
+        <version.junit>4.12</version.junit>
         <version.fest-assert>1.4</version.fest-assert>
         <version.jaxb-api>2.2.12</version.jaxb-api>
         <version.xstream>1.4.9</version.xstream>

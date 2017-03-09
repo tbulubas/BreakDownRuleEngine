@@ -4,19 +4,21 @@ import com.google.common.collect.ImmutableMap;
 import com.tb_optimus.breakdown.*;
 import com.tb_optimus.breakdown_ruleengine.configuration.BreakDownRuleEngineIntegrationTestsConfiguration;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-@ContextConfiguration(
-        classes = {BreakDownRuleEngineIntegrationTestsConfiguration.class}
-)
-public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = {BreakDownRuleEngineIntegrationTestsConfiguration.class})
+public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests implements ApplicationContextAware {
 
     private Colour red = new ColourImpl(1L, "red");
     private Colour blue = new ColourImpl(2L, "blue");
