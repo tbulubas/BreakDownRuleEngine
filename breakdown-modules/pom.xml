@@ -19,7 +19,5 @@
         <module>breakdown-model-impl</module>
         <module>breakdown-service-api</module>
         <module>breakdown-service-impl</module>
-        <module>breakdown-configuration-api</module>
-        <module>breakdown-configuration-impl</module>
     </modules>
 </project>

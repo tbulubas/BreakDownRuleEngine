@@ -4,7 +4,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackageClasses = {BreakDownRuleEngineBusinessConfiguration.class}, basePackages = {"com.tb_optimus.breakdown_ruleengine.configurations.impl"})}
+@ComponentScan(
+        basePackageClasses = { BreakDownRuleEngineBusinessServicesConfiguration.class },
+        basePackages = {""}
+)
 public class BreakDownRuleEngineIntegrationTestsConfiguration {
 
 }

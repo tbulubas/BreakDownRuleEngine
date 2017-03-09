@@ -14,7 +14,6 @@
     <orderEntry type="module" module-name="breakdown-model-api" />
     <orderEntry type="module" module-name="breakdown-model-impl" />
     <orderEntry type="module" module-name="breakdown-service-api" />
-    <orderEntry type="module" module-name="breakdown-configuration-api" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-rest:1.5.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:1.5.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:1.5.1.RELEASE" level="project" />

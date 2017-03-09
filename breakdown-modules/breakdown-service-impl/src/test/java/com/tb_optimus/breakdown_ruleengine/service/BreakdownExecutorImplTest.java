@@ -12,7 +12,6 @@ import java.util.Map;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-
 @RunWith(MockitoJUnitRunner.class)
 public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests {
 
