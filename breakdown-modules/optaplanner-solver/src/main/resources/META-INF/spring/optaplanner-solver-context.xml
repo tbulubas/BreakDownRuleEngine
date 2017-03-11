@@ -7,8 +7,4 @@
     <!-- Context -->
     <context:component-scan base-package="com.tb_optimus.breakdown_ruleengine.solver"/>
 
-    <!--<bean id="breakdownSolver" class="com.tb_optimus.breakdown_ruleengine.solver.services.impl.BreakdownSolverImpl">-->
-        <!--<constructor-arg type="java.lang.String"-->
-                         <!--value="configuration/breakdownSolverConfig.xml"/>-->
-    <!--</bean>-->
 </beans>

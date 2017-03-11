@@ -26,7 +26,6 @@ public class BreakdownSolverImpl implements BreakdownSolver {
 
     @Autowired
     public BreakdownSolverImpl(@Value("configuration/breakdownSolverConfig.xml") String solverConfigResource) {
-        LOG.info("Creating BreakdownSolverImpl 3");
         this.solverConfigResource = solverConfigResource;
     }
 
