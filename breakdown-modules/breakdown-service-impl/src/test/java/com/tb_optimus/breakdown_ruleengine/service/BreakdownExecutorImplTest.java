@@ -29,10 +29,10 @@ public class BreakdownExecutorImplTest {
     private Size s42 = new SizeImpl(6L, "42");
 
     @Mock
-    private BreakdownSolver breakdownSolver = new BreakdownSolverImpl(null);
+    private BreakdownSolver breakdownSolver;
 
     @InjectMocks
-    private BreakdownExecutor breakdownExecutor;
+    private BreakdownExecutor breakdownExecutor = new BreakdownExecutorImpl();
 
     @Test
     public void shouldExecuteBreakdown() {

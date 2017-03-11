@@ -13,7 +13,7 @@
 
     <artifactId>optaplanner-solver</artifactId>
     <groupId>com.tb_optimus.breakdown-ruleengine</groupId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>BDRE Solver</name>
 
     <dependencies>

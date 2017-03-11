@@ -2,6 +2,7 @@ package com.tb_optimus.breakdown_ruleengine.solver.services.impl;
 
 import com.google.common.collect.Lists;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.Breakdown;
+import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownAssignment;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution;
 import com.tb_optimus.breakdown_ruleengine.solver.services.api.BreakdownSolver;
 import org.junit.After;
@@ -56,6 +57,8 @@ public class BreakdownSolverImplTest {
         Breakdown breakdown = new Breakdown(Lists.newArrayList(1,1,1));
         breakdownList.add(breakdown);
         startSolution.setBreakdownList(breakdownList);
+        List<BreakdownAssignment> breakdownAssignmentList = Lists.newArrayList();
+        startSolution.setBreakdownAssignmentList(breakdownAssignmentList);
         // when
         BreakdownSolution solve = breakdownSolver.solve(startSolution);
         // then

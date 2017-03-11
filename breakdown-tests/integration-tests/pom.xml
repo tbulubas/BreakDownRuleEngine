@@ -10,8 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>integration-tests</artifactId>
-    <packaging>pom</packaging>
-    <name>BDRE Integration Tests IMPL</name>
+    <packaging>jar</packaging>
+    <name>BDRE Integration Tests</name>
 
     <dependencies>
         <dependency>
