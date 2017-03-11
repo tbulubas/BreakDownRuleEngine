@@ -3,6 +3,7 @@ package com.tb_optimus.breakdown_ruleengine.service;
 import com.google.common.collect.Lists;
 import com.tb_optimus.breakdown.ColourSizeOrder;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.Breakdown;
+import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownAssignment;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution;
 import com.tb_optimus.breakdown_ruleengine.solver.services.api.BreakdownSolver;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
@@ -31,6 +32,8 @@ public class BreakdownExecutorImpl implements BreakdownExecutor
         BreakdownSolution inputSolution = new BreakdownSolution();
         List<Breakdown> breakdownList = Lists.newArrayList();
         inputSolution.setBreakdownList(breakdownList);
+        List<BreakdownAssignment> breakdownAssignmentList = Lists.newArrayList();
+        inputSolution.setBreakdownAssignmentList(breakdownAssignmentList);
         HardSoftScore hardSoftScore = HardSoftScore.valueOf(0, 0);
         inputSolution.setScore(hardSoftScore);
         BreakdownSolution outputSolution = breakdownSolver.solve(inputSolution);

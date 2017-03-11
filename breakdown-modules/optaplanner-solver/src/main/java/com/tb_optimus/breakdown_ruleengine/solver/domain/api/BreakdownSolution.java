@@ -37,6 +37,14 @@ public class BreakdownSolution implements Solution<HardSoftScore> {
         this.score = score;
     }
 
+
+    public List<BreakdownAssignment> getBreakdownAssignmentList() {
+        return breakdownAssignmentList;
+    }
+
+    public void setBreakdownAssignmentList(List<BreakdownAssignment> breakdownAssignmentList) {
+        this.breakdownAssignmentList = breakdownAssignmentList;
+    }
     public Collection<?> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
         facts.addAll(breakdownAssignmentList);
