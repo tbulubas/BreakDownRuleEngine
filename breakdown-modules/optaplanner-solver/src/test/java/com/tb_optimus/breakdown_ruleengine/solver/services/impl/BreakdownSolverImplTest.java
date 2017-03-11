@@ -20,9 +20,7 @@ import static org.fest.assertions.Assertions.assertThat;
 @RunWith(MockitoJUnitRunner.class)
 public class BreakdownSolverImplTest {
 
-    private SolverFactory<BreakdownSolution> solverFactory;
-    private Solver<BreakdownSolution> solver;
-    private BreakdownSolver breakdownSolver = new BreakdownSolverImpl(null, null);
+    private BreakdownSolver breakdownSolver = new BreakdownSolverImpl(null);
 
     @Before
     public void setUp() throws Exception {
@@ -39,7 +37,8 @@ public class BreakdownSolverImplTest {
         // given
         String solverConfigResource = "configuration/breakdownSolverConfig.xml";
         // when
-        breakdownSolver.initialise(solverConfigResource);
+        breakdownSolver.setSolverConfigResource(solverConfigResource);
+        breakdownSolver.initialise();
         Solver<BreakdownSolution> solver = breakdownSolver.getSolver();
         // then
         assertThat(solver).isNotNull();
@@ -50,8 +49,8 @@ public class BreakdownSolverImplTest {
     public void solve() throws Exception {
         // given
         String solverConfigResource = "configuration/breakdownSolverConfig.xml";
-        breakdownSolver.initialise(solverConfigResource);
-        Solver<BreakdownSolution> solver = breakdownSolver.getSolver();
+        breakdownSolver.setSolverConfigResource(solverConfigResource);
+        breakdownSolver.initialise();
         BreakdownSolution startSolution = new BreakdownSolution();
         List<Breakdown> breakdownList = new ArrayList<Breakdown>();
         Breakdown breakdown = new Breakdown(Lists.newArrayList(1,1,1));

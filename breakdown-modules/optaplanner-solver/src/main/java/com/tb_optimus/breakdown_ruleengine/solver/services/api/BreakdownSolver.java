@@ -6,12 +6,16 @@ import org.optaplanner.core.api.solver.SolverFactory;
 
 public interface BreakdownSolver {
 
-    void initialise(String solverConfigResource);
+    void initialise();
 
     BreakdownSolution solve(BreakdownSolution solution);
 
     SolverFactory<BreakdownSolution> getSolverFactory();
 
     Solver<BreakdownSolution> getSolver();
+
+    String getSolverConfigResource();
+
+    void setSolverConfigResource(String solverConfigResource);
 
 }

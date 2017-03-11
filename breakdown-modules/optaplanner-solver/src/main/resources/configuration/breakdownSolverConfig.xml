@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
   <!--<environmentMode>FULL_ASSERT</environmentMode>-->
-  <solutionClass>org.optaplanner.examples.tsp.domain.TravelingSalesmanTour</solutionClass>
-  <entityClass>org.optaplanner.examples.tsp.domain.Visit</entityClass>
+  <solutionClass>com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution</solutionClass>
+  <entityClass>com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownAssignment</entityClass>
 
+  <!-- Score configuration -->
   <scoreDirectorFactory>
-    <scoreDefinitionType>SIMPLE_LONG</scoreDefinitionType>
-    <!--<easyScoreCalculatorClass>org.optaplanner.examples.tsp.solver.score.TspEasyScoreCalculator</easyScoreCalculatorClass>-->
-    <!--<incrementalScoreCalculatorClass>org.optaplanner.examples.tsp.solver.score.TspIncrementalScoreCalculator</incrementalScoreCalculatorClass>-->
-    <scoreDrl>org/optaplanner/examples/tsp/solver/tspScoreRules.drl</scoreDrl>
-    <!--<assertionScoreDirectorFactory>-->
-      <!--<easyScoreCalculatorClass>org.optaplanner.examples.tsp.solver.score.TspEasyScoreCalculator</easyScoreCalculatorClass>-->
-    <!--</assertionScoreDirectorFactory>-->
-    <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+    <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+    <scoreDrl>drools/breakdownScoreRules.drl</scoreDrl>
   </scoreDirectorFactory>
 
   <termination>
-    <minutesSpentLimit>2</minutesSpentLimit>
+    <bestScoreLimit>0hard/0soft</bestScoreLimit>
+    <!--<minutesSpentLimit>2</minutesSpentLimit>-->
   </termination>
+
   <constructionHeuristic>
     <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
   </constructionHeuristic>
+
   <localSearch>
     <unionMoveSelector>
       <changeMoveSelector>
@@ -28,18 +26,18 @@
         <selectionOrder>SHUFFLED</selectionOrder>
       </changeMoveSelector>
       <!--<swapMoveSelector>-->
-        <!--<cacheType>PHASE</cacheType>-->
-        <!--<selectionOrder>SHUFFLED</selectionOrder>-->
+      <!--<cacheType>PHASE</cacheType>-->
+      <!--<selectionOrder>SHUFFLED</selectionOrder>-->
       <!--</swapMoveSelector>-->
-      <tailChainSwapMoveSelector/>
-      <subChainChangeMoveSelector>
-        <subChainSelector>
-          <maximumSubChainSize>50</maximumSubChainSize>
-        </subChainSelector>
-        <selectReversingMoveToo>true</selectReversingMoveToo>
-      </subChainChangeMoveSelector>
+      <!--<tailChainSwapMoveSelector/>-->
+      <!--<subChainChangeMoveSelector>-->
+      <!--<subChainSelector>-->
+      <!--<maximumSubChainSize>50</maximumSubChainSize>-->
+      <!--</subChainSelector>-->
+      <!--<selectReversingMoveToo>true</selectReversingMoveToo>-->
+      <!--</subChainChangeMoveSelector>-->
       <!--<subChainSwapMoveSelector>-->
-        <!--<selectReversingMoveToo>false</selectReversingMoveToo>-->
+      <!--<selectReversingMoveToo>false</selectReversingMoveToo>-->
       <!--</subChainSwapMoveSelector>-->
       <!-- TODO use nearby selection to scale out -->
     </unionMoveSelector>
@@ -50,4 +48,5 @@
       <acceptedCountLimit>1</acceptedCountLimit>
     </forager>
   </localSearch>
+
 </solver>

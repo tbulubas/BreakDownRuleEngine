@@ -2,9 +2,13 @@ package com.tb_optimus.breakdown_ruleengine.service;
 
 import com.google.common.collect.ImmutableMap;
 import com.tb_optimus.breakdown.*;
-import com.tb_optimus.breakdown_ruleengine.configuration.BreakDownRuleEngineIntegrationTestsConfiguration;
+import com.tb_optimus.breakdown_ruleengine.configuration.BreakDownRuleEngineIntTestsConfiguration;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,8 +21,10 @@ import java.util.Map;
 import static org.fest.assertions.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {BreakDownRuleEngineIntegrationTestsConfiguration.class})
-public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests implements ApplicationContextAware {
+@ContextConfiguration(classes = {BreakDownRuleEngineIntTestsConfiguration.class})
+public class BreakdownExecutorImplITSTest extends AbstractJUnit4SpringContextTests implements ApplicationContextAware {
+
+    private static final Logger LOG = LoggerFactory.getLogger(BreakdownExecutorImplITSTest.class);
 
     private Colour red = new ColourImpl(1L, "red");
     private Colour blue = new ColourImpl(2L, "blue");
@@ -32,6 +38,16 @@ public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests 
 
     @Autowired
     private BreakdownExecutor breakdownExecutor;
+
+    @Before
+    public void startUp() {
+        LOG.info("Starting test ...");
+    }
+
+    @After
+    public void tearDown() {
+        LOG.info("Finishing test ...");
+    }
 
     @Test
     public void shouldExecuteBreakdown() {

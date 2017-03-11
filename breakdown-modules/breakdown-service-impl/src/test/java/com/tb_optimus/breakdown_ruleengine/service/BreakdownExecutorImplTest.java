@@ -2,10 +2,13 @@ package com.tb_optimus.breakdown_ruleengine.service;
 
 import com.google.common.collect.ImmutableMap;
 import com.tb_optimus.breakdown.*;
+import com.tb_optimus.breakdown_ruleengine.solver.services.api.BreakdownSolver;
+import com.tb_optimus.breakdown_ruleengine.solver.services.impl.BreakdownSolverImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +16,7 @@ import java.util.Map;
 import static org.fest.assertions.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests {
+public class BreakdownExecutorImplTest {
 
     private Colour red = new ColourImpl(1L, "red");
     private Colour blue = new ColourImpl(2L, "blue");
@@ -25,6 +28,10 @@ public class BreakdownExecutorImplTest extends AbstractJUnit4SpringContextTests 
     private Size s40 = new SizeImpl(5L, "40");
     private Size s42 = new SizeImpl(6L, "42");
 
+    @Mock
+    private BreakdownSolver breakdownSolver = new BreakdownSolverImpl(null);
+
+    @InjectMocks
     private BreakdownExecutor breakdownExecutor;
 
     @Test
