@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+    <ear-subdeployments-isolated>false</ear-subdeployments-isolated>
+    <deployment>
+        <dependencies>
+            <module name="com.tb_optimus.breakdown_ruleengine.configuration" export="true"/>
+            <module name="org.jgroups"/>
+            <module name="org.jboss.as.naming"/>
+            <module name="org.jboss.as.clustering.jgroups"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
+
