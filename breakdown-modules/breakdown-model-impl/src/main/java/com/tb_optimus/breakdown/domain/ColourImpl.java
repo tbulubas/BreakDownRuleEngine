@@ -8,6 +8,9 @@ public class ColourImpl implements Colour {
     private Long id;
     private String name;
 
+    protected ColourImpl() {
+    }
+
     public ColourImpl(Long id, String name) {
         this.id = id;
         this.name = name;
