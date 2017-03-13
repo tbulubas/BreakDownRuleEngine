@@ -7,15 +7,30 @@
 
     <persistence-unit name="breakdown-pu">
 
-        <jta-data-source>breakdownDS</jta-data-source>
+        <!--<jta-data-source>breakdownDS</jta-data-source>-->
 
-        <class>com.tb_optimus.breakdown_ruleengine.persistence.ColourDB</class>
+        <!--<class>com.tb_optimus.breakdown_ruleengine.persistence.ColourDB</class>-->
 
-        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <!--<exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+
+        <!--<properties>-->
+        <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+        <!--&lt;!&ndash; Hibernate should generate and export a clean schema on deployment &ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="javax.persistence.schema-generation.database.action"&ndash;&gt;-->
+        <!--&lt;!&ndash;value="drop-and-create"/>&ndash;&gt;-->
+        <!--</properties>-->
 
         <properties>
-
+            <property name="dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:tsg"/>
+            <property name="hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.connection.autocommit" value="true"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
 
     </persistence-unit>
+
 </persistence>

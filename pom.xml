@@ -30,6 +30,7 @@
         <version.logback>1.2.1</version.logback>
         <version.slf4j>1.7.24</version.slf4j>
         <optaplanner.version>6.5.0.Final</optaplanner.version>
+        <version.hsqldb>2.2.4</version.hsqldb>
     </properties>
 
     <modules>
@@ -102,6 +103,12 @@
                 <version>${version.logback}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${version.hsqldb}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -138,6 +145,10 @@
         </dependency>
         <!-- HIBERNATE -->
         <!-- DB PROVIDER -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+        </dependency>
         <!-- XML mapping-->
         <dependency>
             <groupId>javax.xml.bind</groupId>
