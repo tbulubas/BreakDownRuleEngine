@@ -1,7 +1,7 @@
 package com.tb_optimus.breakdown_ruleengine.service;
 
 import com.google.common.collect.Lists;
-import com.tb_optimus.breakdown.ColourSizeOrder;
+import com.tb_optimus.breakdown.domain.ColourSizeOrder;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.Breakdown;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownAssignment;
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution;

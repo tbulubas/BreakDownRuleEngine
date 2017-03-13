@@ -1,7 +1,7 @@
 package com.tb_optimus.breakdown_ruleengine.service;
 
 import com.google.common.collect.ImmutableMap;
-import com.tb_optimus.breakdown.*;
+import com.tb_optimus.breakdown.domain.*;
 import com.tb_optimus.breakdown_ruleengine.configuration.BreakDownRuleEngineIntTestsConfiguration;
 import org.junit.After;
 import org.junit.Before;

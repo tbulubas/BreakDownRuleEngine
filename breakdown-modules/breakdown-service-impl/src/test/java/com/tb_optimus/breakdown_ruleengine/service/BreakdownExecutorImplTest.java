@@ -1,9 +1,8 @@
 package com.tb_optimus.breakdown_ruleengine.service;
 
 import com.google.common.collect.ImmutableMap;
-import com.tb_optimus.breakdown.*;
+import com.tb_optimus.breakdown.domain.*;
 import com.tb_optimus.breakdown_ruleengine.solver.services.api.BreakdownSolver;
-import com.tb_optimus.breakdown_ruleengine.solver.services.impl.BreakdownSolverImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

@@ -22,12 +22,4 @@
         </dependency>
     </dependencies>
 
-    <!--<dependencies>-->
-        <!--<dependency>-->
-            <!--<groupId>com.tb_optimus.breakdown-ruleengine</groupId>-->
-            <!--<artifactId>breakdown-model-api</artifactId>-->
-            <!--<version>1.0-SNAPSHOT</version>-->
-        <!--</dependency>-->
-    <!--</dependencies>-->
-
 </project>

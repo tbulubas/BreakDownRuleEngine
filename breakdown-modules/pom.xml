@@ -19,5 +19,6 @@
         <module>breakdown-model-impl</module>
         <module>breakdown-service-api</module>
         <module>breakdown-service-impl</module>
+        <module>breakdown-persistence</module>
     </modules>
 </project>

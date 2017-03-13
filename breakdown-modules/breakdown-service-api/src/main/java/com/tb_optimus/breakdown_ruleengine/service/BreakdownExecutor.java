@@ -1,7 +1,6 @@
 package com.tb_optimus.breakdown_ruleengine.service;
 
-import com.tb_optimus.breakdown.ColourSizeOrder;
-import org.springframework.stereotype.Service;
+import com.tb_optimus.breakdown.domain.ColourSizeOrder;
 
 public interface BreakdownExecutor {
 

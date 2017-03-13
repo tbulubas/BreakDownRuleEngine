@@ -1,4 +1,4 @@
-package com.tb_optimus.breakdown;
+package com.tb_optimus.breakdown.domain;
 
 import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;

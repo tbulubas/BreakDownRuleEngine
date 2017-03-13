@@ -1,6 +1,6 @@
-package com.tb_optimus.breakdown;
+package com.tb_optimus.breakdown.domain;
 
-public interface Colour {
+public interface Size {
 
     Long getId();
 
