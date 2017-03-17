@@ -7,10 +7,22 @@ import java.util.Map;
 @Component
 public class SizeOrderImpl implements SizeOrder {
 
+    private Long id;
+
     private Map<Size, Integer> sizeOrder;
 
     public SizeOrderImpl(Map<Size, Integer> sizeOrder) {
         this.sizeOrder = sizeOrder;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

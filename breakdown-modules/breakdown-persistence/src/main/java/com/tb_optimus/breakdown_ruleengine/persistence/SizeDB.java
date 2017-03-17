@@ -1,6 +1,6 @@
 package com.tb_optimus.breakdown_ruleengine.persistence;
 
-import com.tb_optimus.breakdown.domain.Colour;
+import com.tb_optimus.breakdown.domain.Size;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -10,24 +10,28 @@ import javax.validation.constraints.NotNull;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-@Table(name = "COLOUR")
-public class ColourDB implements Colour {
+@Table(name = "SIZE")
+public class SizeDB implements Size{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "COLOUR_ID")
+    @Column(name = "SIZE_ID")
     private Long id;
 
     @NotNull
     @javax.validation.constraints.Size(min = 2, max = 16)
-    @Column(name = "COLOUR_NM" )
+    @Column(name = "SIZE_NM")
     protected String name;
+
+//    @Embedded
+//    private OrderDB order;
 
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
+
     }
 
     public String getName() {
@@ -35,6 +39,9 @@ public class ColourDB implements Colour {
     }
 
     public void setName(String name) {
-        this.name = name;
+
     }
+
+//    @OneToOne(mappedBy = "size")
+//    protected SizeOrderDB;
 }
