@@ -1,16 +1,12 @@
 package com.tb_optimus.breakdown_ruleengine.persistence;
 
 import com.tb_optimus.breakdown.domain.Size;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@DynamicInsert
-@DynamicUpdate
-@Table(name = "SIZE")
+@Table(name = "SIZES")
 public class SizeDB implements Size{
 
     @Id
@@ -24,6 +20,9 @@ public class SizeDB implements Size{
     protected String name;
 
 //    @Embedded
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "order", column = @Column(name = "SIZE_ORDER")),
+//    })
 //    private OrderDB order;
 
     public Long getId() {
@@ -31,7 +30,6 @@ public class SizeDB implements Size{
     }
 
     public void setId(Long id) {
-
     }
 
     public String getName() {
@@ -39,9 +37,7 @@ public class SizeDB implements Size{
     }
 
     public void setName(String name) {
-
+        this.name = name;
     }
 
-//    @OneToOne(mappedBy = "size")
-//    protected SizeOrderDB;
 }

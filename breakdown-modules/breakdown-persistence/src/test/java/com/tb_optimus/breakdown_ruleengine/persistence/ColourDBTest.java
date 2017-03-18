@@ -11,6 +11,18 @@ public class ColourDBTest extends AbstractDBTest {
     private static Logger LOG = LoggerFactory.getLogger(ColourDBTest.class);
 
     @Test
+    public void shouldFindColourAlreadyInDB() throws Exception {
+        LOG.info("Test shouldFindColourAlreadyInDB()");
+        // given
+        Long id = 1000L;
+        // when
+        ColourDB colour = em.find(ColourDB.class, id);
+        // then
+        assertThat(colour).isNotNull();
+        assertThat(colour.getName()).isEqualTo("red");
+    }
+
+    @Test
     public void shouldNotFindColour() throws Exception {
         LOG.info("Test shouldNotFindColour()");
         // given

@@ -12,6 +12,18 @@ public class SizeDBTest extends AbstractDBTest {
     private static Logger LOG = LoggerFactory.getLogger(SizeDBTest.class);
 
     @Test
+    public void shouldFindSizeAlreadyInDB() throws Exception {
+        LOG.info("Test shouldFindSizeAlreadyInDB()");
+        // given
+        Long id = 2001L;
+        // when
+        SizeDB size = em.find(SizeDB.class, id);
+        // then
+        assertThat(size).isNotNull();
+        assertThat(size.getName()).isEqualTo("34");
+    }
+
+    @Test
     public void shouldNotFindSize() throws Exception {
         LOG.info("Test shouldNotFindSize()");
         // given

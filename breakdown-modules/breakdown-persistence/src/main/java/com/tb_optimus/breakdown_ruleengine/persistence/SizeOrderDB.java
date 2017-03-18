@@ -2,18 +2,12 @@ package com.tb_optimus.breakdown_ruleengine.persistence;
 
 import com.tb_optimus.breakdown.domain.Size;
 import com.tb_optimus.breakdown.domain.SizeOrder;
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 @Entity
-@DynamicInsert
-@DynamicUpdate
-@Table(name = "SIZE_ORDER")
+@Table(name = "SIZE_ORDERS")
 public class SizeOrderDB implements SizeOrder{
 
     @Id
@@ -21,8 +15,8 @@ public class SizeOrderDB implements SizeOrder{
     @Column(name = "SIZE_ORDER_ID")
     private Long id;
 
-    @OneToMany(mappedBy = "name")
-    protected Set<SizeDB> sizeOrder = new HashSet<SizeDB>();
+//    @OneToMany(mappedBy = "name")
+//    protected Set<SizeDB> sizeOrder = new HashSet<SizeDB>();
 
     @Override
     public Long getId() {

@@ -8,9 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@DynamicInsert
-@DynamicUpdate
-@Table(name = "COLOUR")
+@Table(name = "COLOURS")
 public class ColourDB implements Colour {
 
     @Id
