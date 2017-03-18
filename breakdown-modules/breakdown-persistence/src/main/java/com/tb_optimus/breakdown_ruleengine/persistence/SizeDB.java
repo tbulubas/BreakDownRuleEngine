@@ -19,11 +19,11 @@ public class SizeDB implements Size{
     @Column(name = "SIZE_NM")
     protected String name;
 
-//    @Embedded
-//    @AttributeOverrides({
-//            @AttributeOverride(name = "order", column = @Column(name = "SIZE_ORDER")),
-//    })
-//    private OrderDB order;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "value", column = @Column(name = "SIZE_ORDER")),
+    })
+    private OrderDB order;
 
     public Long getId() {
         return id;
@@ -38,6 +38,14 @@ public class SizeDB implements Size{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public OrderDB getOrder() {
+        return order;
+    }
+
+    public void setOrder(OrderDB order) {
+        this.order = order;
     }
 
 }

@@ -7,5 +7,13 @@ import javax.persistence.Embeddable;
 public class OrderDB {
 
     @Column
-    Long order;
+    Long value;
+
+    public Long getValue() {
+        return value;
+    }
+
+    public void setValue(Long order) {
+        this.value = order;
+    }
 }
