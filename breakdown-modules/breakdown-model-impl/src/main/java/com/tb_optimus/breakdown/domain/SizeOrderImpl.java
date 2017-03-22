@@ -3,15 +3,16 @@ package com.tb_optimus.breakdown.domain;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
+import java.util.Set;
 
 @Component
 public class SizeOrderImpl implements SizeOrder {
 
     private Long id;
 
-    private Map<Size, Integer> sizeOrder;
+    private Set<Size> sizeOrder;
 
-    public SizeOrderImpl(Map<Size, Integer> sizeOrder) {
+    public SizeOrderImpl(Set<Size> sizeOrder) {
         this.sizeOrder = sizeOrder;
     }
 
@@ -26,34 +27,38 @@ public class SizeOrderImpl implements SizeOrder {
     }
 
     @Override
-    public Map<Size, Integer> getSizeOrder() {
+    public Set<Size> getSizeOrder() {
         return sizeOrder;
     }
 
     @Override
-    public void setSizeOrder(Map<Size, Integer> sizeOrder) {
+    public void setSizeOrder(Set<Size> sizeOrder) {
         this.sizeOrder = sizeOrder;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof SizeOrderImpl)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         SizeOrderImpl sizeOrder1 = (SizeOrderImpl) o;
 
-        return sizeOrder.equals(sizeOrder1.sizeOrder);
+        if (id != null ? !id.equals(sizeOrder1.id) : sizeOrder1.id != null) return false;
+        return sizeOrder != null ? sizeOrder.equals(sizeOrder1.sizeOrder) : sizeOrder1.sizeOrder == null;
     }
 
     @Override
     public int hashCode() {
-        return sizeOrder.hashCode();
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (sizeOrder != null ? sizeOrder.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
         return "SizeOrderImpl{" +
-                "sizeOrder=" + sizeOrder +
+                "id=" + id +
+                ", sizeOrder=" + sizeOrder +
                 '}';
     }
 }

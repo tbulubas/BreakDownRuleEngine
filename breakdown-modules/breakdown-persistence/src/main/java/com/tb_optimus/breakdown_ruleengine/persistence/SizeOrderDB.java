@@ -5,18 +5,24 @@ import com.tb_optimus.breakdown.domain.SizeOrder;
 
 import javax.persistence.*;
 import java.util.Map;
+import java.util.Set;
 
 @Entity
-@Table(name = "SIZE_ORDERS")
-public class SizeOrderDB implements SizeOrder{
+@Table(name = "SIZE_ORDER")
+public class SizeOrderDB implements SizeOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "SIZE_ORDER_ID")
+    @Column(name = "ID")
     private Long id;
 
-//    @OneToMany(mappedBy = "name")
-//    protected Set<SizeDB> sizeOrder = new HashSet<SizeDB>();
+    @javax.validation.constraints.Size(min = 2, max = 16)
+    @Column(name = "NAME", nullable = true)
+    private String name;
+
+    @ElementCollection(targetClass = SizeDB.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "SIZE", joinColumns = @JoinColumn(name="SIZE_ORDER_ID"))
+    private Set<Size> sizes;
 
     @Override
     public Long getId() {
@@ -28,11 +34,11 @@ public class SizeOrderDB implements SizeOrder{
 
     }
 
-    public Map<Size, Integer> getSizeOrder() {
+    public Set<Size> getSizeOrder() {
         return null;
     }
 
-    public void setSizeOrder(Map<Size, Integer> sizeOrder) {
+    public void setSizeOrder(Set<Size> sizeOrder) {
 
     }
 }

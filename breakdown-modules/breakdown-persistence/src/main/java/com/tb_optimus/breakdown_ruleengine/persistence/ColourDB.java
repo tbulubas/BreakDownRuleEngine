@@ -8,17 +8,17 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "COLOURS")
+@Table(name = "COLOUR")
 public class ColourDB implements Colour {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "COLOUR_ID")
+    @Column(name = "ID")
     private Long id;
 
     @NotNull
     @javax.validation.constraints.Size(min = 2, max = 16)
-    @Column(name = "COLOUR_NM" )
+    @Column(name = "NAME" )
     protected String name;
 
     public Long getId() {

@@ -7,13 +7,13 @@ import javax.persistence.Embeddable;
 public class OrderDB {
 
     @Column
-    Long value;
+    Integer sku;
 
-    public Long getValue() {
-        return value;
+    public Integer getSku() {
+        return sku;
     }
 
-    public void setValue(Long order) {
-        this.value = order;
+    public void setSku(Integer order) {
+        this.sku = order;
     }
 }

@@ -1,6 +1,6 @@
 package com.tb_optimus.breakdown.domain;
 
-import java.util.Map;
+import java.util.Set;
 
 public interface SizeOrder {
 
@@ -8,8 +8,8 @@ public interface SizeOrder {
 
     void setId(Long id);
 
-    Map<Size, Integer> getSizeOrder();
+    Set<Size> getSizeOrder();
 
-    void setSizeOrder(Map<Size, Integer> sizeOrder);
+    void setSizeOrder(Set<Size> sizeOrder);
 
 }
