@@ -10,7 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>breakdown-rest</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>BDRE Rest</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.tb_optimus.breakdown-ruleengine</groupId>
+            <artifactId>breakdown-model-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
