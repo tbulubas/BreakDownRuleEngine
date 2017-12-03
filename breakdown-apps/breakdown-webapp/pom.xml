@@ -3,20 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>breakdown-ruleengine</artifactId>
+        <artifactId>breakdown-apps</artifactId>
         <groupId>com.tb_optimus.breakdown-ruleengine</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>breakdown-apps</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>breakdown-webapp</artifactId>
+    <name>BDRE Webapp</name>
+    <packaging>war</packaging>
 
-    <name>BDRE Applications</name>
-    <modules>
-        <module>server-app</module>
-        <module>breakdown-webapp</module>
-    </modules>
-
+    <build>
+        <finalName>bdre-webapp</finalName>
+    </build>
 
 </project>
