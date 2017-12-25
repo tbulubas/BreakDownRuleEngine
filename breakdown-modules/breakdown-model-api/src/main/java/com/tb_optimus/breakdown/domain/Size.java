@@ -10,8 +10,8 @@ public interface Size {
 
     void setName(String name);
 
-    Integer getSku();
+    Integer getCount();
 
-    void setSku(Integer sku);
+    void setCount(Integer count);
 
 }

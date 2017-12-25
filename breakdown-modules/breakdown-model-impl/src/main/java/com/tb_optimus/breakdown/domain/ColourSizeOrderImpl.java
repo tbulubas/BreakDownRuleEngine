@@ -1,6 +1,5 @@
 package com.tb_optimus.breakdown.domain;
 
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.springframework.stereotype.Component;
 
@@ -9,14 +8,11 @@ import java.util.Map;
 @Component
 public class ColourSizeOrderImpl implements ColourSizeOrder {
 
-    private ColourOrder coloursOrder;
-
     private SizeOrder sizesOrder;
 
     private Map<Colour,SizeOrder> order;
 
     public ColourSizeOrderImpl(Map<Colour, SizeOrder> order) {
-        coloursOrder = new ColourOrderImpl(Maps.<Colour, Integer>newHashMap());
         sizesOrder = new SizeOrderImpl(Sets.<Size>newHashSet());
         // FIXME: 3/22/2017
 //        for( Map.Entry<Colour, SizeOrder> entryColour : order.entrySet()) {
@@ -24,20 +20,11 @@ public class ColourSizeOrderImpl implements ColourSizeOrder {
 //            int sizeCapacity = 0;
 //            int colourCapacity = 0;
 //            for( Size size : entryColour.getValue().getSizeOrder()) {
-//                if (sizesOrder.getSizeOrder()) {
-//                    sizeCapacity = coloursOrder.getColourOrder().get(colour);
-//                }
 //                sizesOrder.getSizeOrder().put(entrySize.getKey(),sizeCapacity + entrySize.getValue());
 //                colourCapacity += entrySize.getValue();
 //            }
-//            coloursOrder.getColourOrder().put(entryColour.getKey(), colourCapacity);
 //        }
         this.order = order;
-    }
-
-    @Override
-    public ColourOrder getColoursOrder() {
-        return coloursOrder;
     }
 
     @Override
@@ -71,7 +58,6 @@ public class ColourSizeOrderImpl implements ColourSizeOrder {
     @Override
     public String toString() {
         return "ColourSizeOrderImpl{" +
-                "coloursOrder=" + coloursOrder +
                 ", sizesOrder=" + sizesOrder +
                 ", order=" + order +
                 '}';

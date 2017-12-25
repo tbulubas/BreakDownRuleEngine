@@ -13,7 +13,12 @@ public class Breakdown {
     @PlanningVariable(valueRangeProviderRefs = {"breakdown"})
     private List<Integer> breakdown;
 
+    public Breakdown() {
+        this.id = -1L;
+    }
+
     public Breakdown(List<Integer> breakdown) {
+        this();
         this.breakdown = breakdown;
     }
 

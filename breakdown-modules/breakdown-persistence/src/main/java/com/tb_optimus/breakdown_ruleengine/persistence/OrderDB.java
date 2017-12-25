@@ -7,13 +7,13 @@ import javax.persistence.Embeddable;
 public class OrderDB {
 
     @Column
-    Integer sku;
+    Integer count;
 
-    public Integer getSku() {
-        return sku;
+    public Integer getCount() {
+        return count;
     }
 
-    public void setSku(Integer order) {
-        this.sku = order;
+    public void setCount(Integer order) {
+        this.count = order;
     }
 }

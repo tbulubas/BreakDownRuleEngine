@@ -24,7 +24,7 @@ public class SizeDBTest extends AbstractDBTest {
         assertThat(size).isNotNull();
         assertThat(size.getName()).isEqualTo("34");
         assertThat(size.getOrder()).isNotNull();
-        assertThat(size.getOrder().getSku()).isEqualTo(20);
+        assertThat(size.getOrder().getCount()).isEqualTo(20);
     }
 
     @Ignore(/* FIXME: 3/22/2017 */)

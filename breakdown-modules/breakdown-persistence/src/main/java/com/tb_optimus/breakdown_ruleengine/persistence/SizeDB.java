@@ -21,7 +21,7 @@ public class SizeDB implements Size{
 
     @Embedded
     @AttributeOverrides({
-            @AttributeOverride(name = "sku", column = @Column(name = "SIZE_ORDER")),
+            @AttributeOverride(name = "count", column = @Column(name = "SIZE_ORDER")),
     })
     private OrderDB order;
 
@@ -41,12 +41,12 @@ public class SizeDB implements Size{
     }
 
     @Override
-    public Integer getSku() {
-        return order.getSku();
+    public Integer getCount() {
+        return order.getCount();
     }
 
     @Override
-    public void setSku(Integer sku) {
+    public void setCount(Integer count) {
 
     }
 

@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.1.RELEASE</version>
+        <version>1.5.9.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -25,11 +25,11 @@
         <version.junit>4.12</version.junit>
         <version.fest-assert>1.4</version.fest-assert>
         <version.jaxb-api>2.2.12</version.jaxb-api>
-        <version.xstream>1.4.9</version.xstream>
+        <version.xstream>1.4.10</version.xstream>
         <version.surefire>2.16</version.surefire>
         <version.logback>1.2.1</version.logback>
         <version.slf4j>1.7.24</version.slf4j>
-        <optaplanner.version>6.5.0.Final</optaplanner.version>
+        <optaplanner.version>7.5.0.Final</optaplanner.version>
         <version.hsqldb>2.2.4</version.hsqldb>
         <version.h2>1.4.178</version.h2>
         <version.cxf>3.1.10</version.cxf>
@@ -87,11 +87,11 @@
                 <version>${version.xstream}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${version.slf4j}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.slf4j</groupId>-->
+                <!--<artifactId>slf4j-api</artifactId>-->
+                <!--<version>${version.slf4j}</version>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -142,9 +142,10 @@
 
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.6.1</version>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.25</version>
         </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

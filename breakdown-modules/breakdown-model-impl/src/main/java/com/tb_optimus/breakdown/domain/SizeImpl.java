@@ -9,20 +9,25 @@ public class SizeImpl implements Size {
 
     private String name;
 
-    public Integer getSku() {
-        return sku;
-    }
-
-    public void setSku(Integer sku) {
-        this.sku = sku;
-    }
-
-    private Integer sku;
-
-    public SizeImpl(String name, Integer sku) {
+    public SizeImpl() {
         this.id = -1L;
+        this.name = "unknown";
+    }
+
+    private Integer count;
+
+    public SizeImpl(String name, Integer count) {
+        this();
         this.name = name;
-        this.sku = sku;
+        this.count = count;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 
     @Override
@@ -54,7 +59,7 @@ public class SizeImpl implements Size {
 
         if (!id.equals(size.id)) return false;
         if (!name.equals(size.name)) return false;
-        return sku.equals(size.sku);
+        return count.equals(size.count);
     }
 
     @Override
@@ -62,7 +67,7 @@ public class SizeImpl implements Size {
         return "SizeImpl{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", sku=" + sku +
+                ", count=" + count +
                 '}';
     }
 
@@ -70,7 +75,7 @@ public class SizeImpl implements Size {
     public int hashCode() {
         int result = id.hashCode();
         result = 31 * result + name.hashCode();
-        result = 31 * result + sku.hashCode();
+        result = 31 * result + count.hashCode();
         return result;
     }
 }
