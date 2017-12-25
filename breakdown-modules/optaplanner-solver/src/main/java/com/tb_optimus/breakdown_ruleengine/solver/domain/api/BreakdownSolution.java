@@ -1,8 +1,10 @@
 package com.tb_optimus.breakdown_ruleengine.solver.domain.api;
 
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
+import org.optaplanner.core.api.domain.solution.PlanningScore;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
-import org.optaplanner.core.api.domain.solution.Solution;
+//import org.optaplanner.core.api.domain.solution.Solution;
+import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 
@@ -11,16 +13,22 @@ import java.util.Collection;
 import java.util.List;
 
 @PlanningSolution
-public class BreakdownSolution implements Solution<HardSoftScore> {
+public class BreakdownSolution //implements Solution<HardSoftScore>
+{
 
     private HardSoftScore score;
 
-    @ValueRangeProvider(id = "breakdownRange")
     private List<Breakdown> breakdownList;
 
-    @PlanningEntityCollectionProperty
     private List<BreakdownAssignment> breakdownAssignmentList;
 
+    @PlanningEntityCollectionProperty
+    public List<BreakdownAssignment> getBreakdownAssignmentList() {
+        return breakdownAssignmentList;
+    }
+
+    @ValueRangeProvider(id = "breakdownRange")
+    @ProblemFactCollectionProperty
     public List<Breakdown> getBreakdownList() {
         return breakdownList;
     }
@@ -29,6 +37,7 @@ public class BreakdownSolution implements Solution<HardSoftScore> {
         this.breakdownList = breakdownList;
     }
 
+    @PlanningScore
     public HardSoftScore getScore() {
         return score;
     }
@@ -37,14 +46,10 @@ public class BreakdownSolution implements Solution<HardSoftScore> {
         this.score = score;
     }
 
-
-    public List<BreakdownAssignment> getBreakdownAssignmentList() {
-        return breakdownAssignmentList;
-    }
-
     public void setBreakdownAssignmentList(List<BreakdownAssignment> breakdownAssignmentList) {
         this.breakdownAssignmentList = breakdownAssignmentList;
     }
+
     public Collection<?> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
         facts.addAll(breakdownAssignmentList);

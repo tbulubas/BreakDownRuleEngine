@@ -1,16 +1,11 @@
 package com.tb_optimus.breakdown_ruleengine.solver.domain.api;
 
-import org.optaplanner.core.api.domain.entity.PlanningEntity;
-import org.optaplanner.core.api.domain.variable.PlanningVariable;
-
 import java.util.List;
 
-@PlanningEntity
 public class Breakdown {
 
     private Long id;
 
-    @PlanningVariable(valueRangeProviderRefs = {"breakdown"})
     private List<Integer> breakdown;
 
     public Breakdown() {

@@ -12,22 +12,29 @@ import java.io.Serializable;
 @PlanningEntity(difficultyComparatorClass = BreakAssignmentDifficultyComparator.class)
 public class BreakdownAssignment implements Serializable, Comparable<Breakdown> {
 
-    private Long id;
+    private Long id = -1L;
 
-    @PlanningVariable(valueRangeProviderRefs = {"breakdownRange"})
+    private Integer assignment = 1;
+
     private Breakdown breakdown;
 
-    @PlanningVariable(valueRangeProviderRefs = {"assignmentRange"})
-    private Integer assignment;
-
-    @ValueRangeProvider(id = "assignmentRange")
-    public CountableValueRange<Integer> getStartPeriodRange() {
-        return ValueRangeFactory.createIntValueRange(1, 100);
+    public BreakdownAssignment() {
     }
 
+    @PlanningVariable(valueRangeProviderRefs = {"breakdownRange"})
     public Breakdown getBreakdown() {
         return breakdown;
     }
+
+//    @PlanningVariable(valueRangeProviderRefs = {"assignmentRange"})
+    public Integer getAssignment() {
+        return assignment;
+    }
+
+//    @ValueRangeProvider(id = "assignmentRange")
+//    public CountableValueRange<Integer> getStartPeriodRange() {
+//        return ValueRangeFactory.createIntValueRange(1, 100);
+//    }
 
     public void setBreakdown(Breakdown breakdown) {
         this.breakdown = breakdown;
