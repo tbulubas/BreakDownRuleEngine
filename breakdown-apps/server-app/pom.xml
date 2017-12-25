@@ -10,7 +10,7 @@ http://www.w3.org/2001/XMLSchema-instance ">
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>app</artifactId>
+    <artifactId>server-app</artifactId>
     <packaging>ear</packaging>
     <name>BDRE Application main app</name>
 
@@ -45,7 +45,7 @@ http://www.w3.org/2001/XMLSchema-instance ">
             </plugin>
         </plugins>
 
-        <finalName>bdre-app</finalName>
+        <finalName>server-app</finalName>
     </build>
 
 </project>
