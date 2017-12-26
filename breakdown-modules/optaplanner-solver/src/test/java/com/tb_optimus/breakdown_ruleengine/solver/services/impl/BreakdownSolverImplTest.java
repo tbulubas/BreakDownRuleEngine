@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.optaplanner.core.api.solver.Solver;
-import org.optaplanner.core.api.solver.SolverFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,18 +46,19 @@ public class BreakdownSolverImplTest {
     }
 
     @Test
-    public void solve() throws Exception {
+    public void solve() {
         // given
         String solverConfigResource = "configuration/breakdownSolverConfig.xml";
         breakdownSolver.setSolverConfigResource(solverConfigResource);
         breakdownSolver.initialise();
         BreakdownSolution startSolution = new BreakdownSolution();
-        List<Breakdown> breakdownList = new ArrayList<Breakdown>();
-        Breakdown breakdown = new Breakdown(Lists.newArrayList(1,1,1));
-        breakdownList.add(breakdown);
-        startSolution.setBreakdownList(breakdownList);
-        List<BreakdownAssignment> breakdownAssignmentList = Lists.newArrayList();
-        startSolution.setBreakdownAssignmentList(breakdownAssignmentList);
+        List<BreakdownAssignment> breakdownAssignments = new ArrayList<BreakdownAssignment>();
+        List<Breakdown> breakdownTargets = new ArrayList<Breakdown>();
+        breakdownAssignments.add(new BreakdownAssignment(new Breakdown(1, new int[]{1,1,1})));
+        breakdownTargets.add(new Breakdown(1, new int[]{3,3,3}));
+        startSolution.setBreakdownTargets(breakdownTargets);
+        startSolution.setBreakdownAssignments(breakdownAssignments);
+        startSolution.setAssignments(Lists.newArrayList(0,1,2,3));
         // when
         BreakdownSolution solve = breakdownSolver.solve(startSolution);
         // then

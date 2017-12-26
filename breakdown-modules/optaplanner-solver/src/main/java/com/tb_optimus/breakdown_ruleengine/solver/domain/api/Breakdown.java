@@ -1,27 +1,27 @@
 package com.tb_optimus.breakdown_ruleengine.solver.domain.api;
 
-import java.util.List;
-
 public class Breakdown {
 
     private Long id;
+    private int dimension;
+    private int[] breakdown;
 
-    private List<Integer> breakdown;
-
-    public Breakdown() {
+    public Breakdown(int dimension) {
         this.id = -1L;
+        this.dimension = dimension;
+        this.breakdown = new int [dimension];
     }
 
-    public Breakdown(List<Integer> breakdown) {
-        this();
+    public Breakdown(int dimension, int[] breakdown) {
+        this(dimension);
         this.breakdown = breakdown;
     }
 
-    public List<Integer> getBreakdown() {
+    public int[] getBreakdown() {
         return breakdown;
     }
 
-    public void setBreakdown(List<Integer> breakdown) {
+    public void setBreakdown(int[] breakdown) {
         this.breakdown = breakdown;
     }
 

@@ -1,7 +1,5 @@
 package com.tb_optimus.breakdown_ruleengine.service;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
 import com.tb_optimus.breakdown.domain.*;
 import com.tb_optimus.breakdown_ruleengine.solver.services.api.BreakdownSolver;
 import org.assertj.core.util.Sets;

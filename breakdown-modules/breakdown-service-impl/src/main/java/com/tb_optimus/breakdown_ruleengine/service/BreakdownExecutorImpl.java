@@ -30,10 +30,8 @@ public class BreakdownExecutorImpl implements BreakdownExecutor
     public Boolean executeBreakdown(ColourSizeOrder order) {
 
         BreakdownSolution inputSolution = new BreakdownSolution();
-        List<Breakdown> breakdownList = Lists.newArrayList();
-        inputSolution.setBreakdownList(breakdownList);
         List<BreakdownAssignment> breakdownAssignmentList = Lists.newArrayList();
-        inputSolution.setBreakdownAssignmentList(breakdownAssignmentList);
+        inputSolution.setBreakdownAssignments(breakdownAssignmentList);
         HardSoftScore hardSoftScore = HardSoftScore.valueOf(0, 0);
         inputSolution.setScore(hardSoftScore);
         BreakdownSolution outputSolution = breakdownSolver.solve(inputSolution);

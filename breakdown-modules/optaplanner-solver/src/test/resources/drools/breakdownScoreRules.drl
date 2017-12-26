@@ -1,9 +1,11 @@
 package com.tb_optimus.breakdown_ruleengine.solver;
     dialect "java"
+//dialect "mvel"
 
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
 
 import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownSolution;
+import com.tb_optimus.breakdown_ruleengine.solver.domain.api.BreakdownAssignment;
 
 global HardSoftScoreHolder scoreHolder;
 
@@ -16,5 +18,17 @@ rule "period"
 end
 
 // ############################################################################
+// Hard constraints
+// ############################################################################
+
+// ############################################################################
 // Soft constraints
 // ############################################################################
+
+rule "BreakdownSolutionCost"
+    when
+        $breakdownSolution : BreakdownSolution($breakdownTargets : breakdownTargets)
+        $breakdownAssignment : BreakdownAssignment($assignment : assignment)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, $assignment * $breakdownAssignment.getSize());
+end

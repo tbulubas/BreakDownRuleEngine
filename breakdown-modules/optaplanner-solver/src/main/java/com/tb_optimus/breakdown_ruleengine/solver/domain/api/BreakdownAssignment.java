@@ -2,9 +2,6 @@ package com.tb_optimus.breakdown_ruleengine.solver.domain.api;
 
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
-import org.optaplanner.core.api.domain.valuerange.CountableValueRange;
-import org.optaplanner.core.api.domain.valuerange.ValueRangeFactory;
-import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
 import java.io.Serializable;
@@ -12,23 +9,42 @@ import java.io.Serializable;
 @PlanningEntity(difficultyComparatorClass = BreakAssignmentDifficultyComparator.class)
 public class BreakdownAssignment implements Serializable, Comparable<Breakdown> {
 
-    private Long id = -1L;
+    private Long id;
 
-    private Integer assignment = 1;
+    private Integer assignment;
 
     private Breakdown breakdown;
 
-    public BreakdownAssignment() {
+    public int getSize() {
+        int sum=0;
+        for( int el : breakdown.getBreakdown()) {
+            sum += el;
+        }
+        return sum;
     }
 
-    @PlanningVariable(valueRangeProviderRefs = {"breakdownRange"})
+    public BreakdownAssignment() {
+        this.id = -1L;
+        this.assignment = 0;
+    }
+
+    public BreakdownAssignment(Breakdown breakdown) {
+        this();
+        this.breakdown = breakdown;
+    }
+
+//    @PlanningVariable(valueRangeProviderRefs = {"breakdownRange"})
     public Breakdown getBreakdown() {
         return breakdown;
     }
 
-//    @PlanningVariable(valueRangeProviderRefs = {"assignmentRange"})
+    @PlanningVariable(valueRangeProviderRefs = {"assignmentRange"})
     public Integer getAssignment() {
         return assignment;
+    }
+
+    public void setAssignment(Integer assignment) {
+        this.assignment = assignment;
     }
 
 //    @ValueRangeProvider(id = "assignmentRange")
